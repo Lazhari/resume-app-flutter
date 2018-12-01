@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mdc101/ui/diagonal_clipper.dart';
-import 'package:mdc101/experiences.dart';
-import 'package:mdc101/ui/experience_row.dart';
+import 'package:resume/ui/diagonal_clipper.dart';
+import 'package:resume/experiences.dart';
+import 'package:resume/ui/experience_row.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key}) : super(key: key);
+
   @override
   _MainPageState createState() => new _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  final _imageHeight = 256.0;
+  final _imageHeight = 200.0;
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -18,7 +20,7 @@ class _MainPageState extends State<MainPage> {
         children: <Widget>[
           _buildTimeline(),
           _buildImage(),
-          _buildTopHeadder(),
+          //_buildTopHeader(),
           _buildProfileRow(),
           _buildBottomPart(),
         ],
@@ -29,7 +31,7 @@ class _MainPageState extends State<MainPage> {
   Widget _buildImage() {
     return new ClipPath(
       clipper: new DiagonalClipper(),
-      child: new Image.asset('assets/bg.jpeg',
+      child: new Image.asset('assets/bg.jpg',
           fit: BoxFit.fitHeight,
           height: _imageHeight,
           colorBlendMode: BlendMode.srcOver,
@@ -37,17 +39,17 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _buildTopHeadder() {
+  Widget _buildTopHeader() {
     return new Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 32.0),
       child: new Row(
         children: <Widget>[
-          new Icon(Icons.menu, size: 32.0, color: Colors.white),
+          // new Icon(Icons.menu, size: 32.0, color: Colors.white),
           new Expanded(
             child: new Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: new Text(
-                "Skills",
+                "Resume",
                 style: new TextStyle(
                     fontSize: 20.0,
                     color: Colors.white,
@@ -128,10 +130,10 @@ class _MainPageState extends State<MainPage> {
           children: <Widget>[
             new Text(
               'My Experciens',
-              style: new TextStyle(fontSize: 34.0),
+              style: new TextStyle(fontSize: 24.0),
             ),
             new Text('As a Full Stack Developer',
-                style: new TextStyle(color: Colors.grey, fontSize: 12.0))
+                style: new TextStyle(color: Colors.grey, fontSize: 18.0))
           ],
         ));
   }

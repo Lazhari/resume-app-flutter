@@ -1,8 +1,5 @@
-# mdc101
+# Resume With Flutter
 
-A new Flutter project.
+A Simple Resume application with [Flutter](https://flutter.io/)
 
 ## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mdc101/experiences.dart';
+import 'package:resume/experiences.dart';
 
 class ExperienceRow extends StatefulWidget {
   final Experience experience;
-  final double dotSize = 12.0;
+  final double verticalBarSize = 2.0;
+
   const ExperienceRow({Key key, this.experience}) : super(key: key);
 
   @override
@@ -16,17 +17,18 @@ class ExperienceRowState extends State<ExperienceRow> {
   @override
   Widget build(BuildContext context) {
     return new Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: new Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new Padding(
-            padding:
-                new EdgeInsets.symmetric(horizontal: 32.0 - widget.dotSize / 2),
+            padding: new EdgeInsets.symmetric(
+                horizontal: 32.0 - widget.verticalBarSize / 2),
             child: new Container(
-              height: widget.dotSize,
-              width: widget.dotSize,
+              height: 30.0,
+              width: widget.verticalBarSize,
               decoration: new BoxDecoration(
-                  shape: BoxShape.circle, color: widget.experience.color),
+                  shape: BoxShape.rectangle, color: widget.experience.color),
             ),
           ),
           new Expanded(
@@ -37,15 +39,29 @@ class ExperienceRowState extends State<ExperienceRow> {
                   widget.experience.jobTitle,
                   style: new TextStyle(fontSize: 18.0),
                 ),
-                new Text(
-                  widget.experience.company,
-                  style: new TextStyle(fontSize: 12.0, color: Colors.grey),
+                Padding(
+                  padding: EdgeInsets.only(top: 6.0),
+                  child: new Text(
+                    widget.experience.company,
+                    style: new TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 6.0),
+                  child: new Text(
+                    widget.experience.description,
+                    style: TextStyle(
+                        fontSize: 12.0, textBaseline: TextBaseline.alphabetic),
+                  ),
                 )
               ],
             ),
           ),
           new Padding(
-            padding: const EdgeInsets.only(right: 16.0),
+            padding: const EdgeInsets.only(right: 16.0, left: 16.0),
             child: new Text(
               widget.experience.date,
               style: new TextStyle(fontSize: 12.0, color: Colors.grey),
