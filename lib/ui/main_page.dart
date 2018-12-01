@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mdc101/ui/diagonal_clipper.dart';
+import 'package:mdc101/experiences.dart';
+import 'package:mdc101/ui/experience_row.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key}) : super(key: key);
@@ -14,10 +16,11 @@ class _MainPageState extends State<MainPage> {
     return new Scaffold(
       body: new Stack(
         children: <Widget>[
+          _buildTimeline(),
           _buildImage(),
           _buildTopHeadder(),
           _buildProfileRow(),
-          _buildBottomPart()
+          _buildBottomPart(),
         ],
       ),
     );
@@ -102,14 +105,19 @@ class _MainPageState extends State<MainPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             _buildMyExperiencesHeader(),
-            _buildExperiencesList()
+            _buildExperiencesList(),
           ],
         ));
   }
 
-  //TODO: Build Experience List
   Widget _buildExperiencesList() {
-    return new Container();
+    return new Expanded(
+      child: new ListView(
+        children: experiences
+            .map((experience) => new ExperienceRow(experience: experience))
+            .toList(),
+      ),
+    );
   }
 
   Widget _buildMyExperiencesHeader() {

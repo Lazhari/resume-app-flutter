@@ -28,11 +28,18 @@ List<Experience> experiences = [
       company: 'Linkry Events',
       date: '2016-2017',
       color: Colors.blue,
-      active: true),
+      active: false),
   new Experience(
       jobTitle: 'Full Stack Engineer',
       company: 'Linkry Events',
       date: '2015-2016',
       color: Colors.blue,
-      active: true)
+      active: false),
+  new Experience(
+    jobTitle: 'Full Stack Engineer',
+    company: 'leBordeluche',
+    date: '2014-2015',
+    color: Colors.deepPurple,
+    active: false
+  )
 ];
