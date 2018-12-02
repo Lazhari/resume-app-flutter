@@ -1,5 +1,5 @@
 # Resume With Flutter
 
-A Simple Resume application with [Flutter](https://flutter.io/)
+A sample Resume application with [Flutter](https://flutter.io/)
 
-![Resume App](https://github.com/Lazhari/resume-app-flutter/raw/resume_app.png)
+![Resume App](https://github.com/Lazhari/resume-app-flutter/raw/master/resume_app.png)
