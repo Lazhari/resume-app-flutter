@@ -129,7 +129,7 @@ class _MainPageState extends State<MainPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new Text(
-              'My Experciens',
+              'my Experiences',
               style: new TextStyle(fontSize: 24.0),
             ),
             new Text('As a Full Stack Developer',
